@@ -15,22 +15,30 @@ func checkIncrement(prev int, curr int, incr *int) {
 }
 
 func main() {
-	file, err := os.Open("./aoc-d1")
+	file, err := os.Open("./aoc-d2")
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer file.Close()
 	increment := new(int)
+	prevSum := 0
+	window := [3]int{0, 0, 0}
 	scanner := bufio.NewScanner(file)
-	scanner.Scan()
-	current := 0
-	previous, _ := strconv.Atoi(scanner.Text())
-	for scanner.Scan() {
-		fmt.Println(scanner.Text())
-		current, _ = strconv.Atoi(scanner.Text())
-		checkIncrement(previous, current, increment)
-		previous = current
+	for i := 0; i <= 2; i++ {
+		scanner.Scan()
+		window[i], _ = strconv.Atoi(scanner.Text())
+		prevSum += window[i]
 	}
+
+	for scanner.Scan() {
+		window[0] = window[1]
+		window[1] = window[2]
+		window[2], _ = strconv.Atoi(scanner.Text())
+		sum := window[0] + window[1] + window[2]
+		checkIncrement(prevSum, sum, increment)
+		prevSum = sum
+	}
+
 	fmt.Printf("Total increments: %d", *increment)
 	if err := scanner.Err(); err != nil {
 		log.Fatal(err)
