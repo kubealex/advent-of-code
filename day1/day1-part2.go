@@ -15,7 +15,7 @@ func checkIncrement(prev int, curr int, incr *int) {
 }
 
 func main() {
-	file, err := os.Open("./aoc-d2")
+	file, err := os.Open("./aoc-d1")
 	if err != nil {
 		log.Fatal(err)
 	}
