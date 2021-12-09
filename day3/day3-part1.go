@@ -44,7 +44,7 @@ func main() {
 	}
 	gamma, _ := strconv.ParseUint(resultString, 2, 16)
 	epsilon, _ := strconv.ParseUint(revResultString, 2, 16)
-	fmt.Printf("Result: \n Gamma: %d\n Epsilon: %d \n Result: %d\n ", gamma, epsilon, gamma*epsilon)
+	fmt.Printf("\n*************\nGamma: %d\nEpsilon: %d \nResult: %d\n*************\n ", gamma, epsilon, gamma*epsilon)
 	if err := scanner.Err(); err != nil {
 		log.Fatal(err)
 	}
