@@ -11,6 +11,9 @@ import (
 type BingoBoard struct {
 }
 
+type BingoCell struct {
+}
+
 func Split(r rune) bool {
 	return r == ',' || r == ' '
 }
