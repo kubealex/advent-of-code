@@ -39,7 +39,8 @@ func main() {
 		prevSum = sum
 	}
 
-	fmt.Printf("Total increments: %d", *increment)
+	fmt.Printf("\n*************\nTotal increments: %d\n*************\n ", *increment)
+
 	if err := scanner.Err(); err != nil {
 		log.Fatal(err)
 	}

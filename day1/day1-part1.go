@@ -31,7 +31,7 @@ func main() {
 		checkIncrement(previous, current, increment)
 		previous = current
 	}
-	fmt.Printf("Total increments: %d", *increment)
+	fmt.Printf("\n*************\nTotal increments: %d\n*************\n ", *increment)
 	if err := scanner.Err(); err != nil {
 		log.Fatal(err)
 	}

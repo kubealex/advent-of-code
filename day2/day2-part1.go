@@ -33,6 +33,8 @@ func main() {
 	}
 
 	fmt.Println(coords[0] * coords[1])
+	fmt.Printf("\n*************\nResult: %d\n*************\n ", coords[0]*coords[1])
+
 	if err := scanner.Err(); err != nil {
 		log.Fatal(err)
 	}
