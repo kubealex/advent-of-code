@@ -29,6 +29,7 @@ func main() {
 	for scanner.Scan() {
 		line := scanner.Text()
 		test = strings.FieldsFunc(line, Split)
+		
 	}
 	fmt.Println(test)
 }
