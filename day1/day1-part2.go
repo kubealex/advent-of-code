@@ -29,7 +29,6 @@ func main() {
 		window[i], _ = strconv.Atoi(scanner.Text())
 		prevSum += window[i]
 	}
-
 	for scanner.Scan() {
 		window[0] = window[1]
 		window[1] = window[2]
