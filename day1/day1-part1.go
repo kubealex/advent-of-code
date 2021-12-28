@@ -10,7 +10,7 @@ import (
 
 func checkIncrement(prev int, curr int, incr *int) {
 	if curr > prev {
-		*incr++
+	  *incr++
 	}
 }
 
